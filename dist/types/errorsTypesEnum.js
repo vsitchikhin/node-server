@@ -1,0 +1,1 @@
+'use strict';Object.defineProperty(exports,'__esModule',{value:true});exports.ErrorsTypesEnum=void 0;var ErrorsTypesEnum;(function(ErrorsTypesEnum){ErrorsTypesEnum['ok']='OK';ErrorsTypesEnum['invalidPassword']='INVALID_PASSWORD';ErrorsTypesEnum['invalidData']='INVALID_DATA';}(ErrorsTypesEnum=exports.ErrorsTypesEnum||(exports.ErrorsTypesEnum={})));
