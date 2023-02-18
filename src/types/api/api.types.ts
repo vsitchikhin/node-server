@@ -16,7 +16,7 @@ export interface UserDto {
 }
 
 export interface IResponse {
-  payload: Object;
+  payload: unknown;
   error: boolean;
   errorCode: string;
   msg: string;
