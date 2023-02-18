@@ -22,7 +22,7 @@ export interface IResponse {
   msg: string;
 }
 
-export interface UserApi {
+export interface UserFullApi {
   id: string;
   name: string;
   surname: string;
@@ -30,4 +30,9 @@ export interface UserApi {
   email?: string;
   password: string;
   accounts: AccountDto[];
+}
+
+export interface UserShortApi {
+  login: string;
+  password: string;
 }

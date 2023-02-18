@@ -13,10 +13,10 @@ datasource db {
 // --------------------------------------------------------------------
 // Users
 model Users {
-  id Int @id @default(autoincrement())
-  name String
-  surname String
-  login String
+  id       Int        @id @default(autoincrement())
+  name     String
+  surname  String
+  login    String     @unique
   password String
   accounts Accounts[]
 }
@@ -24,12 +24,11 @@ model Users {
 // --------------------------------------------------------------------
 // Accounts
 model Accounts {
-  id Int @id @default(autoincrement())
-  url String
-  login String
+  id       Int    @id @default(autoincrement())
+  url      String
+  login    String
   password String
-  name String
-  userId Int?
-  user Users? @relation(fields: [userId], references: [id])
+  name     String
+  userId   Int?
+  user     Users? @relation(fields: [userId], references: [id])
 }
-

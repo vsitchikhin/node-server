@@ -1,6 +1,6 @@
 import express from 'express';
 import { PrismaClient } from "@prisma/client";
-import { signIn } from "../controllers/auth/AuthController";
+import { signIn, signUp } from "../controllers/auth/AuthController";
 import { salt } from "../app";
 
 export default function getAuthRouter(db: PrismaClient) {
@@ -13,11 +13,15 @@ export default function getAuthRouter(db: PrismaClient) {
 
         console.log(response);
         res.json(response);
-    })
+    });
 
     router.post('/signup', async (req, res) => {
-        const data = req.body.json('this is register page');
-    })
+        const data = req.body;
+
+        const response = await signUp(data, salt, db);
+
+        res.json(response);
+    });
 
     return router;
 }
