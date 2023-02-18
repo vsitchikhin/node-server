@@ -32,3 +32,4 @@ model Accounts {
   userId Int?
   user Users? @relation(fields: [userId], references: [id])
 }
+
