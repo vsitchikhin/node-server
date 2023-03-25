@@ -19,6 +19,7 @@ model Users {
   login    String     @unique
   password String
   accounts Accounts[]
+  session  Sessions[]
 }
 
 // --------------------------------------------------------------------
@@ -31,4 +32,16 @@ model Accounts {
   name     String
   userId   Int?
   user     Users? @relation(fields: [userId], references: [id])
+}
+
+// --------------------------------------------------------------------
+// Sessions
+model Sessions {
+  id          Int      @id @default(autoincrement())
+  userId      Int
+  create_date DateTime
+  delete_date DateTime
+  lifetime    DateTime
+  session_id  String   @unique
+  user        Users?   @relation(fields: [userId], references: [id])
 }
