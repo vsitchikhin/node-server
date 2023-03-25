@@ -36,3 +36,8 @@ export interface UserShortApi {
   login: string;
   password: string;
 }
+
+export interface EmailSenderApi {
+  email: string;
+  userId: string;
+}

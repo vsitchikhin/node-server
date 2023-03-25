@@ -1,5 +1,4 @@
 import { IResponse, UserFullApi, UserShortApi, UserDto } from "types/api/api.types";
-import { Users } from "@prisma/client";
 import { PrismaClient } from "@prisma/client";
 import bcrypt from 'bcrypt';
 import { ErrorsTypesEnum } from "../../types/errorsTypesEnum";
